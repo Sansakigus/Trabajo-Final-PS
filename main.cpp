@@ -139,14 +139,16 @@ void PrintStats(const std::vector<CPUData> & entries1, const std::vector<CPUData
 		std::cout.precision(2);
 		std::cout << (100.f * ACTIVE_TIME / TOTAL_TIME) << "%";
 		std::string num_str1(std::to_string(100.f * ACTIVE_TIME / TOTAL_TIME));
-		fichero << "active : " << num_str1;
+		//active
+		fichero << num_str1 << "\t";
 		std::cout << " - idle: ";
 		std::cout.setf(std::ios::fixed, std::ios::floatfield);
 		std::cout.width(6);
 		std::cout.precision(2);
 		std::cout << (100.f * IDLE_TIME / TOTAL_TIME) << "%" << std::endl;
 		std::string num_str2(std::to_string(100.f * IDLE_TIME / TOTAL_TIME));
-		fichero << "idle: " << num_str2;
+		//idle
+		fichero << num_str2 << std::endl; 
 	}
 }
 /*string WriteStats(const std::vector<CPUData> & entries1, const std::vector<CPUData> & entries2){
